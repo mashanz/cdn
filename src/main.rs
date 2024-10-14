@@ -5,7 +5,7 @@ use actix_web::{App, HttpServer};
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new().service(
-            fs::Files::new("/static", ".")
+            fs::Files::new("/", ".")
                 .show_files_listing()
                 .use_last_modified(true),
         )

@@ -1,6 +1,6 @@
 [package]
 name = "cdn"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 authors = ["mashanz <tech@mashanz.com>"]
 description = "Serve Static like CDN LOL"

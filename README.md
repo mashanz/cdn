@@ -1,13 +1,25 @@
 # Serve folder like CDN
 
+## Installation
+
 ```sh
-# Installation
 cargo install cdn
+```
 
-# Run
+## Run
+
+```
 cdn
+# Static will be served at 0.0.0.0:8080
+```
 
-# port 8080 will be served as static
-```
-```
+## Using it with docker
+
+Docker is based on distroless/cc-debian12
+
+```Dockerfile
+FROM ghcr.io/mashanz/cdn:latest AS runner
+WORKDIR /static
+COPY . .
+ENTRYPOINT ["cdn"]
 ```

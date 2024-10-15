@@ -16,3 +16,16 @@ actix-files = "0.6.6"
 actix-web = "4.9.0"
 env_logger = "0.11.5"
 log = "0.4.22"
+
+[profile.dev]
+split-debuginfo = "unpacked"
+
+[profile.dev.build-override]
+opt-level = 3
+
+[profile.release]
+panic = "unwind"  # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true        # Enables link to optimizations
+opt-level = "s"   # Optimize for binary size
+strip = true      # Remove debug symbols
